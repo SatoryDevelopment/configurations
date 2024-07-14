@@ -1,0 +1,13 @@
+name: gitea-db 
+
+networks:
+  gitea:
+    internal: true
+    name: gitea
+
+services:
+  keydb:
+    image: eqalpha/keydb:alpine
+    volumes:
+      - ./docker/gitea/keydb/config/keydb.conf:/etc/keydb/keydb.conf
+      - ./docker/gitea/keydb/data:/var/lib/keydb
